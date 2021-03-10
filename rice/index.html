@@ -1,0 +1,31 @@
+<html>
+<script>
+document.onkeydown = function(e) {return false;} // Disables keyboard input. 
+window.addEventListener('contextmenu', function (e) { e.preventDefault(); }, false); // Disables right click.
+</script>
+<script>
+var riceimg	= new Array()
+
+riceimg[0] = '0.png'
+riceimg[1] = '1.png'
+riceimg[2] = '2.png'
+riceimg[3] = '3.png'
+riceimg[4] = '4.png'
+
+var j = 0
+var p = riceimg.length;
+var preBuffer = new Array()
+for (i = 0; i < p; i++){
+   preBuffer[i] = new Image()
+   preBuffer[i].src = riceimg[i]
+}
+var randimg = Math.round(Math.random()*(p-1));
+function showRice(){
+document.write('<img src="'+riceimg[randimg]+'" style="border: none; width: 100%; height: auto;">');
+}
+</script>
+<body>
+<script>
+showRice();
+</script>
+</html>
